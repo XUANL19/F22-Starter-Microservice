@@ -17,7 +17,8 @@ CORS(app)
 def get_health():
     t = str(datetime.now())
     msg = {
-        "name": "F22-Starter-Microservice",
+        "name": "Xuan Li",
+        # "uni": "xl3125",
         "health": "Good",
         "at time": t
     }
