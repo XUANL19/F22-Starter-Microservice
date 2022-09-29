@@ -10,6 +10,7 @@ app = Flask(__name__,
             static_folder='static/class-ui/',
             template_folder='web/templates')
 
+
 CORS(app)
 
 
