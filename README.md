@@ -34,4 +34,7 @@ Select the file ```tts.py``` and run it. The message will determine if your end-
 
 The file ```columbia_student_resource.py``` is a simple, starter REST resource.
 
+## 2022.9.28
+This congifuration in columbia_student_resource.py supports fetching data from RDS now because the (user: root, password:..... and host: e6156.c4qfxod7s5ol.us-east-1.rds.amazonaws.com) matches the MYSQL DB which I created in RDS.
+Now this app is able to work in cloud from both backend(microserver) and DB.
 
