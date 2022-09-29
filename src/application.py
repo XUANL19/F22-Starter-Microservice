@@ -29,32 +29,18 @@ def get_health():
     return result
 
 
-# @app.route("/api/students/<uni>", methods=["GET"])
-# def get_student_by_uni(uni):
-#
-#     result = ColumbiaStudentResource.get_by_key(uni)
-#
-#     if result:
-#         rsp = Response(json.dumps(result), status=200, content_type="application.json")
-#     else:
-#         rsp = Response("NOT FOUND", status=404, content_type="text/plain")
-#
-#     return rsp
+@app.route("/api/students/<uni>", methods=["GET"])
+def get_student_by_uni(uni):
 
-@app.get("/api/students/xl3125")
-def get_student_by_uni():
-    t = str(datetime.now())
-    msg = {
-        "last_name": "Li",
-        "first_name": "Xuan",
-        "email": "xl3125@columbia.edu",
-        "uni": "xl3125"
-    }
-#
-    # DFF TODO Explain status codes, content type, ... ...
-    result = Response(json.dumps(msg), status=200, content_type="application/json")
+    result = ColumbiaStudentResource.get_by_key(uni)
 
-    return result
+    if result:
+        rsp = Response(json.dumps(result), status=200, content_type="application.json")
+    else:
+        rsp = Response("NOT FOUND", status=404, content_type="text/plain")
+
+    return rsp
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5011)
